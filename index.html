@@ -61,6 +61,15 @@
       color: #FF4500;
     }
 
+    #nav-links.active {
+        display: flex;
+        flex-direction: column;
+        background: #941f02;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 13px;
+    }
+
     .hero {
     width: 100%;
     overflow: hidden;
@@ -100,29 +109,28 @@
       padding: 1rem;
     }
 
-    .hamburger {
+    #hamburger {
       display: none;
       font-size: 1.5rem;
       cursor: pointer;
+    }
+
+    #craft img {
+        align-self: center;
+        border: 5px solid rgb(160, 54, 4);
+        width: 100%;
+        height: auto;
     }
 
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
-        background: #d44e00;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-      }
+        background: #633102;
+        padding: 1rem;
+        }
 
-      nav.active {
-        display: flex;
-      }
-
-      .hamburger {
+      #hamburger {
         display: block;
       }
 
@@ -134,8 +142,8 @@
 </head>
 <body>
   <header>
-    <div class="hamburger">&#9776;</div>
-    <nav>
+    <div id="hamburger">&#9776;</div>
+    <nav id="nav-links">
       <a href="#about">About</a>
       <a href="#craft">Our Craftsmanship</a>
       <a href="#materials">Materials & Process</a>
@@ -157,6 +165,7 @@
     <h2>Our Craftsmanship</h2>
     <p>We specialize in handcrafted wood and steel designs that stand the test of time. Whether it's a live-edge dining table, a metal wall piece, or a custom-built shelving system, we bring bold ideas to life.</p>
     <p>Each creation is built with integrity, and no two pieces are alike.</p>
+    <img src="images/sideTable.png">
   </section>
 
   <section id="materials">
@@ -184,14 +193,24 @@
   </footer>
 
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
+     window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('hamburger').addEventListener('click', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            navLinks.classList.toggle('active');
+            
+            if (hamburger.textContent === '☰') {
+              hamburger.textContent = '✖'; // X symbol
+            } else {
+              hamburger.textContent = '☰'; // Hamburger symbol
+            }
+        });
 
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+      });
   </script>
 </body>
 </html>
