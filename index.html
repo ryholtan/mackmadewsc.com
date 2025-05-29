@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mack Made Wood & Steel Creations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="dogIcon.png">
+  <style>
+
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+      color: #f4f1e3;
+      background: url('images/woodGrain.png') center/cover repeat;
+    }
+
+    header {
+      background: #d44e00;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FF4500;
+    }
+
+    .hero {
+    width: 100%;
+    overflow: hidden;
+    }
+
+    .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #FF6347;
+    }
+
+    section p {
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #d44e00;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #d44e00;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      nav a {
+        margin: 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#craft">Our Craftsmanship</a>
+      <a href="#materials">Materials & Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="images/bannerLogo.png" alt="Bulldog with Cigar" class="hero-img">
+  </div>
+
+  <section id="about">
+    <h2>About Mack Made</h2>
+    <p>At Mack Made, we forge timeless creations from wood and steel—each piece tells a story of rugged craftsmanship, precision, and passion. Inspired by the spirit of the bulldog, our work embodies grit and character.</p>
+    <p>From custom furniture to functional art, every project is a blend of strength and beauty.</p>
+  </section>
+
+  <section id="craft">
+    <h2>Our Craftsmanship</h2>
+    <p>We specialize in handcrafted wood and steel designs that stand the test of time. Whether it's a live-edge dining table, a metal wall piece, or a custom-built shelving system, we bring bold ideas to life.</p>
+    <p>Each creation is built with integrity, and no two pieces are alike.</p>
+  </section>
+
+  <section id="materials">
+    <h2>Materials & Process</h2>
+    <p>We source the finest hardwoods and premium steel, blending rustic warmth with industrial edge. Our process involves cutting, welding, sanding, and finishing—by hand—ensuring each piece is a true original.</p>
+    <p>Flames, sparks, and grit fuel our work—this is craftsmanship with character.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a project in mind? Want to commission a custom piece? Let’s connect.</p>
+    <p>Email: hello@mackmadewoodsteel.com</p>
+    <p>Phone: (555) 789-4560</p>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Mack Made Wood & Steel Creations. All rights reserved.
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="mailto:hello@mackmadewoodsteel.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
