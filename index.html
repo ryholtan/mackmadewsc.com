@@ -4,213 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mack Made Wood & Steel Creations</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
   <link rel="icon" href="dogIcon.png">
-  <style>
-
-    html, body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Quicksand', sans-serif;
-      line-height: 1.6;
-      color: #f4f1e3;
-      background: url('images/woodGrain.png') center/cover repeat;
-    }
-
-    header {
-      background: #d44e00;
-      color: #fff;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8rem;
-    }
-
-    nav {
-      margin-top: 0.5rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #FF4500;
-    }
-
-    #nav-links.active {
-        display: flex;
-        flex-direction: column;
-        background: #941f02;
-        padding: 1rem;
-        text-align: center;
-        border-radius: 13px;
-    }
-
-    .hero {
-    width: 100%;
-    overflow: hidden;
-    }
-
-    .hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    }
-
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      margin-top: 2rem;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #FF6347;
-    }
-
-    section p {
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      background: #d44e00;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    #hamburger {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    #craft img {
-        align-self: center;
-        border: 5px solid rgb(160, 54, 4);
-        width: 100%;
-        height: auto;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #633102;
-        padding: 1rem;
-        }
-
-      #hamburger {
-        display: block;
-      }
-
-      nav a {
-        margin: 1rem 0;
-      }
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <div id="hamburger">&#9776;</div>
-    <nav id="nav-links">
-      <a href="#about">About</a>
-      <a href="#craft">Our Craftsmanship</a>
-      <a href="#materials">Materials & Process</a>
-      <a href="#contact">Contact</a>
+  <header id="main-header">
+    <div class="logo">Mack Made</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="products.html">Products</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <img src="images/bannerLogo.png" alt="Bulldog with Cigar" class="hero-img">
-  </div>
-
-  <section id="about">
-    <h2>About Mack Made</h2>
-    <p>At Mack Made, we forge timeless creations from wood and steel—each piece tells a story of rugged craftsmanship, precision, and passion. Inspired by the spirit of the bulldog, our work embodies grit and character.</p>
-    <p>From custom furniture to functional art, every project is a blend of strength and beauty.</p>
+  <section class="hero">
+    <div class="scroll-wrapper">
+      <button class="scroll-btn left">&#10094;</button>
+      <div class="wall-view">
+        <div class="wall-scroller" id="wall-scroller">
+          <img src="images/sideTable.png" alt="Wall Art 1">
+          <img src="images/sideTable.png" alt="Wall Art 2">
+          <img src="images/sideTable.png" alt="Wall Art 3">
+          <img src="images/sideTable.png" alt="Wall Art 4">
+          <img src="images/sideTable.png" alt="Wall Art 5">
+          <img src="images/sideTable.png" alt="Wall Art 6">
+          <img src="images/sideTable.png" alt="Wall Art 1">
+          <img src="images/sideTable.png" alt="Wall Art 2">
+          <img src="images/sideTable.png" alt="Wall Art 3">
+          <img src="images/sideTable.png" alt="Wall Art 4">
+          <img src="images/sideTable.png" alt="Wall Art 5">
+          <img src="images/sideTable.png" alt="Wall Art 6">
+        </div>
+      </div>
+      <button class="scroll-btn right">&#10095;</button>
+    </div>
   </section>
 
-  <section id="craft">
-    <h2>Our Craftsmanship</h2>
-    <p>We specialize in handcrafted wood and steel designs that stand the test of time. Whether it's a live-edge dining table, a metal wall piece, or a custom-built shelving system, we bring bold ideas to life.</p>
-    <p>Each creation is built with integrity, and no two pieces are alike.</p>
-    <img src="images/sideTable.png">
+
+  <section class="section featured-product">
+    <h2>Featured Product of the Week</h2>
+    <a href="products.html#featured">
+      <img src="images/sideTable.png" alt="Featured Product">
+    </a>
   </section>
 
-  <section id="materials">
-    <h2>Materials & Process</h2>
-    <p>We source the finest hardwoods and premium steel, blending rustic warmth with industrial edge. Our process involves cutting, welding, sanding, and finishing—by hand—ensuring each piece is a true original.</p>
-    <p>Flames, sparks, and grit fuel our work—this is craftsmanship with character.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have a project in mind? Want to commission a custom piece? Let’s connect.</p>
-    <p>Email: hello@mackmadewoodsteel.com</p>
-    <p>Phone: (555) 789-4560</p>
+  <section class="section">
+    <h2>Explore Our Collections</h2>
+    <div class="product-grid">
+      <div class="product-card"><h3>Most Popular</h3></div>
+      <div class="product-card"><h3>Best for Businesses</h3></div>
+      <div class="product-card"><h3>Best for Bathrooms</h3></div>
+      <div class="product-card"><h3>Gifts & Decor</h3></div>
+      <div class="product-card"><h3>Rustic Essentials</h3></div>
+      <div class="product-card"><h3>Outdoor Picks</h3></div>
+      <div class="product-card"><h3>Hand-Forged Steel</h3></div>
+      <div class="product-card"><h3>Kitchen Classics</h3></div>
+      <div class="product-card"><h3>Seasonal Specials</h3></div>
+    </div>
   </section>
 
   <footer>
-    &copy; <span id="year"></span> Mack Made Wood & Steel Creations. All rights reserved.
-    <div class="socials">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="mailto:hello@mackmadewoodsteel.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+    <p>&copy; <span id="year"></span> Mack Made Wood & Steel Creations</p>
   </footer>
 
   <script>
-     window.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('hamburger').addEventListener('click', () => {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
-            
-            navLinks.classList.toggle('active');
-            
-            if (hamburger.textContent === '☰') {
-              hamburger.textContent = '✖'; // X symbol
-            } else {
-              hamburger.textContent = '☰'; // Hamburger symbol
-            }
-        });
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-
-      });
+    
   </script>
 </body>
 </html>
