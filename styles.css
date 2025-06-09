@@ -13,106 +13,185 @@
     body {
       font-family: 'Quicksand', sans-serif;
       color: #333;
-      background: var(--wood);
+      background-image: url("images/woodGrain.png");
+      background-size: 25% auto;
+      background-position: center center;
+      background-repeat: repeat;
     }
+
+    #main-header {
+      transform-origin: top;
+      transition: transform 0.2s ease, background-image 0.3s ease;
+      position: relative;
+      height: 65vh;
+      overflow: hidden; 
+    }
+
 
     header {
-      background: var(--metal);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
+      position: relative;
+      min-height: 70px;
+      overflow: hidden;
+      z-index: 1900;
+    }
+
+    #header-video {
+      position: absolute;
       top: 0;
-      z-index: 1000;
-      transition: all 0.3s ease-in-out;
+      left: 0;
+      width: 100vw;
+      height: auto;
+      object-fit: contain;
+      z-index: 0;
+      object-position: center;
     }
 
-    header.shrink {
-      padding: 0.5rem 1rem;
+    .header-overlay {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
     }
-
-    header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
+    /* header.shrink {
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
+    } */
 
     nav {
+      height: 5.5vh;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
       display: flex;
-      gap: 1rem;
+      justify-content: right;
+      align-items: center;
+      background-color: #3333335b;
     }
+
+
+    nav .logo {
+      height: 8rem;
+      position: absolute;
+      left: 2rem;
+      top: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 2001;
+    }
+
+    nav.stuck .logo {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    header.shrink + nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
+    }
+
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
       padding: 0.25rem 0.5rem;
+      text-shadow: 0 0 6px rgba(253, 237, 8, 0.658);
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: #fbff00;
+      text-shadow: 0 0 6px rgb(255, 255, 255);
     }
 
+
+
     .scroll-wrapper {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  position: relative;
-}
-
-.hero {
-  background-image: url("images/simpsons.png");
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  
-}
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
 
-.wall-view {
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+    .hero {
+      background-image: url("images/mainWall.png");
+      background-size: cover;            /* Cover entire area */
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 100vh;                     /* Full viewport height */
+      width: 100%;
+      display: flex;                     /* Optional: center content */
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.wall-scroller {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  gap: 1rem;
-  padding: 2rem 0;
-}
 
-.wall-scroller img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 6px solid var(--metal);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
 
-.scroll-btn {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    .wall-view {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
 
-.scroll-btn.left {
-  left: 0.5rem;
-}
+    .wall-scroller {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
 
-.scroll-btn.right {
-  right: 0.5rem;
-}
+    .wall-scroller img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 6px solid var(--metal);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .scroll-btn.left {
+      left: 0.5rem;
+    }
+
+    .scroll-btn.right {
+      right: 0.5rem;
+    }
 
 
     .section {

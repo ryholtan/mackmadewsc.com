@@ -12,16 +12,24 @@
 </head>
 <body>
   <header id="main-header">
-    <div class="logo">Mack Made</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav>
+    <div class="header-vid-container">
+      <video autoplay muted loop playsinline id="header-video">
+        <source src="images/bannerLogoVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="header-overlay">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+  <nav id="main-nav">
+      <img class="logo" src="dogIcon.png" alt="bulldog Logo">
       <a href="#">Home</a>
       <a href="products.html">Products</a>
       <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  </nav>
 
   <section class="hero">
     <div class="scroll-wrapper">
