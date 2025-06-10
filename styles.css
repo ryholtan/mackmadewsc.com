@@ -57,7 +57,7 @@
     }
 
     nav {
-      height: 5.5vh;
+      min-height: 5.5vh;
       position: sticky;
       top: 0;
       z-index: 2000;
@@ -206,7 +206,7 @@
       }
 
       #main-header {
-        height: 15.5vh;
+        min-height: 15.5vh;
       }
     
       .nav-links {
@@ -264,7 +264,7 @@
 .section {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   /* overflow: hidden; */
   border-bottom: 10px ridge rgb(78, 78, 78);
 }
