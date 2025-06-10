@@ -23,43 +23,38 @@
       transform-origin: top;
       transition: transform 0.2s ease, background-image 0.3s ease;
       position: relative;
-      height: 65vh;
+      width: 100%;
       overflow: hidden; 
+      margin: 0;
+      padding: 0;
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
     }
-
 
     header {
       position: relative;
-      min-height: 70px;
       overflow: hidden;
       z-index: 1900;
     }
 
     #header-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
+      width: 100%;
       height: auto;
+      max-width: 100%;
       object-fit: contain;
-      z-index: 0;
-      object-position: center;
+      display: block;
     }
 
-    .header-overlay {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
     /* header.shrink {
       background-image: url("images/diamondPlateStrip.png");
       background-size: 25% auto;
       background-repeat: repeat;
     } */
+
+    .hamburger {
+      display: none;
+    }
 
     nav {
       height: 5.5vh;
@@ -73,6 +68,8 @@
       justify-content: right;
       align-items: center;
       background-color: #3333335b;
+      margin-top: 0;
+      padding-top: 0;
     }
 
 
@@ -93,22 +90,6 @@
       pointer-events: auto;
     }
 
-    header.shrink + nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 1rem;
-      background-image: url("images/diamondPlateStrip.png");
-      background-size: 25% auto;
-      background-repeat: repeat;
-    }
-
-
     nav a {
       color: white;
       text-decoration: none;
@@ -118,85 +99,24 @@
     }
 
     nav a:hover {
-      color: #fbff00;
-      text-shadow: 0 0 6px rgb(255, 255, 255);
+      color: #ff9900;
+      text-shadow: 0 0 6px rgb(255, 3, 3);
     }
-
-
-
-    .scroll-wrapper {
-      position: relative;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
 
     .hero {
-      background-image: url("images/mainWall.png");
-      background-size: cover;            /* Cover entire area */
-      background-position: center center;
-      background-repeat: no-repeat;
-      height: 100vh;                     /* Full viewport height */
-      width: 100%;
-      display: flex;                     /* Optional: center content */
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-
-
-    .wall-view {
-      overflow: hidden;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .wall-scroller {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-      gap: 1rem;
       padding: 2rem 0;
+      background-image: url("images/mainWall.png");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    .wall-scroller img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 6px solid var(--metal);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .scroll-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      font-size: 2rem;
-      padding: 0.5rem;
-      cursor: pointer;
-      z-index: 1100;
-    }
-
-    .scroll-btn.left {
-      left: 0.5rem;
-    }
-
-    .scroll-btn.right {
-      right: 0.5rem;
-    }
-
 
     .section {
       padding: 3rem 1.5rem;
-      max-width: 1200px;
+      /* max-width: 1200px; */
       margin: auto;
       color: #fff;
     }
@@ -263,33 +183,180 @@
     }
 
     @media (max-width: 768px) {
-      .wall-scroller img {
-        width: 120px;
-        height: 120px;
+
+      nav {
+        background-size: cover;
       }
 
-      header nav {
+      nav .logo {
+        height: 6rem;
+        position: absolute;
+        left: 0rem;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 2001;
+      }
+
+      nav.stuck .logo {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      #main-header {
+        height: 15.5vh;
+      }
+    
+      .nav-links {
+        display: none;
         flex-direction: column;
-        background: var(--metal);
+        width: 100%;
+        background-image: url("images/diamondPlateStrip.png");
+        background-size: 25% auto;
+        background-repeat: repeat;
         position: absolute;
         top: 100%;
         left: 0;
-        right: 0;
-        display: none;
+        align-items: center;
       }
 
-      header.active nav {
+      nav.active .nav-links {
         display: flex;
+        justify-content: center;
       }
 
       .hamburger {
         display: block;
         cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        color: white;
+        z-index: 3000;
+        margin-right: 10vw;
       }
+      
+      #medium.box-container, #small.box-container {
+        display: none;
+      }
+
+      .nav-btn {
+        top: 5%;
+      }
+      
+      #large.box-container {
+        width: 60vw !important;
+        height: auto;
+        top: 35% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+      }
+
+      .box img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+      }
+      
     }
 
-    .hamburger {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
+.section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+  border-bottom: 10px ridge rgb(78, 78, 78);
+}
+
+
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: auto;
+      min-width: 100vw;
+      object-fit: cover;
+      z-index: 0;
+      object-position: center center;
+      transform: translateX(-50%);
     }
+
+
+    .box {
+      position: absolute;
+      background: rgba(0,0,0,0.3);
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: auto;
+    }
+
+    .box-container {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    #small.box-container {                    
+      width: 15vw;        
+      top: 15%;
+      left: 10%;
+    }
+
+
+    #large.box-container {
+      width: 30vw;
+      top: 2%;
+      left: 37%;
+    }
+
+    #medium.box-container {
+      width: 20vw;
+      top: 2%;
+      right: 5%;
+    }
+
+
+    #left.box,
+    #center.box,
+    #right.box {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+
+    #left.box {
+      top: 50%;
+    }
+
+    .box img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      top: 50%;
+      border: 15px ridge #6c6c6c;
+    }
+
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      color: #111;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .left-btn  { left: 2.5%; }
+    .right-btn { right: 2.5%; }
+
+    @media (max-width: 768px) {
+      #left.box   { left: 20%; }
+      #center.box { left: 50%; }
+      #right.box  { left: 80%; }
+    }
+

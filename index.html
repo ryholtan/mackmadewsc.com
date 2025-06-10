@@ -6,6 +6,7 @@
   <title>Mack Made Wood & Steel Creations</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
   <link rel="icon" href="dogIcon.png">
@@ -18,40 +19,38 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="header-overlay">
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-    </div>
   </header>
-  <nav id="main-nav">
+  <nav>
       <img class="logo" src="dogIcon.png" alt="bulldog Logo">
-      <a href="#">Home</a>
-      <a href="products.html">Products</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
   </nav>
 
-  <section class="hero">
-    <div class="scroll-wrapper">
-      <button class="scroll-btn left">&#10094;</button>
-      <div class="wall-view">
-        <div class="wall-scroller" id="wall-scroller">
-          <img src="images/sideTable.png" alt="Wall Art 1">
-          <img src="images/sideTable.png" alt="Wall Art 2">
-          <img src="images/sideTable.png" alt="Wall Art 3">
-          <img src="images/sideTable.png" alt="Wall Art 4">
-          <img src="images/sideTable.png" alt="Wall Art 5">
-          <img src="images/sideTable.png" alt="Wall Art 6">
-          <img src="images/sideTable.png" alt="Wall Art 1">
-          <img src="images/sideTable.png" alt="Wall Art 2">
-          <img src="images/sideTable.png" alt="Wall Art 3">
-          <img src="images/sideTable.png" alt="Wall Art 4">
-          <img src="images/sideTable.png" alt="Wall Art 5">
-          <img src="images/sideTable.png" alt="Wall Art 6">
-        </div>
-      </div>
-      <button class="scroll-btn right">&#10095;</button>
+  <section class="section">
+    <picture class="bg-img">
+      <source srcset="./images/mainWallMobile.png" media="(max-width: 768px)">
+      <img src="images/mainWall.png" alt="Background" class="bg-img" />
+    </picture>
+
+    <button class="nav-btn left-btn">&#9664;</button>
+    <div class="box-container" id="small">
+      <div id="left" class="box"><img /></div>
     </div>
+    <div class="box-container" id="large">
+      <div id="center" class="box"><img /></div>
+    </div>
+    <div class="box-container" id="medium">
+      <div id="right" class="box"><img /></div>
+    </div>
+    <button class="nav-btn right-btn">&#9654;</button>
   </section>
 
 

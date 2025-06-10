@@ -1,28 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let scrollIndex = 0;
-  const scroller = document.getElementById('wall-scroller');
-  const imageCount = scroller.children.length;
-  const imagesPerView = 3;
-  const imageWidth = 200 + 16; // width + gap
-
-
-  document.querySelectorAll(".scroll-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const direction = btn.classList.contains("right") ? 1 : -1;
-        scrollWall(direction);
-    });
-    });
-
-
-  window.scrollWall = function(direction) {
-    const maxIndex = Math.ceil(imageCount / imagesPerView) - 1;
-    scrollIndex = (scrollIndex + direction + (maxIndex + 1)) % (maxIndex + 1);
-    scroller.style.transform = `translateX(-${scrollIndex * imagesPerView * imageWidth}px)`;
-  };
-
-  setInterval(() => window.scrollWall(1), 10000);
-
-  const nav = document.getElementById('main-nav');
+  
+  const nav = document.querySelector('nav');
   const observer = new IntersectionObserver(
     ([entry]) => {
       nav.classList.toggle('stuck', !entry.isIntersecting);
@@ -32,8 +10,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(document.querySelector('header'));
 
+  const hamburger = nav.querySelector('.hamburger');
 
-
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+
+  // Carousel
+
+     const images = [
+        './images/products/chainsForged.png',
+        './images/products/idahoCircle.png',
+        './images/products/punisherFlag.png',
+        './images/products/soldiersCross.png',
+        './images/products/theFlag.png',
+        './images/products/tresspassMeetGod.png',
+        './images/products/usaEagle.png',
+        './images/products/weThePeople.png'
+        ];
+
+
+    let index = 1;
+    const leftImg = document.querySelector('#left img');
+    const centerImg = document.querySelector('#center img');
+    const rightImg = document.querySelector('#right img');
+
+    function updateImages() {
+      const prev = (index - 1 + images.length) % images.length;
+      const next = (index + 1) % images.length;
+      leftImg.src = images[prev];
+      centerImg.src = images[index];
+      rightImg.src = images[next];
+    }
+
+    document.querySelector('.right-btn').onclick = () => {
+      index = (index + 1) % images.length;
+      updateImages();
+    };
+
+    document.querySelector('.left-btn').onclick = () => {
+      index = (index - 1 + images.length) % images.length;
+      updateImages();
+    };
+
+    updateImages();
+
 });
