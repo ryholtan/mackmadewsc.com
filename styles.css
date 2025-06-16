@@ -73,8 +73,8 @@
       position: sticky;
       top: 0;
       z-index: 2000;
-      background-image: url("images/diamondPlateStrip.png");
-      background-size: 25% auto;
+      background-image: url("images/diamondPlateJustStrip.png");
+      background-size: 28.5% auto;
       background-repeat: repeat;
       display: flex;
       justify-content: right;
@@ -205,20 +205,98 @@
     .left-btn  { left: 2.5%; }
     .right-btn { right: 2.5%; }
 
-    .featured-product {
+    #featured {
+      background-image: url("images/woodGrain.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
+      padding: 4rem 2rem;
       text-align: center;
     }
 
-    .featured-product img {
+    .featured-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .featured-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .featured-card img {
       width: 100%;
-      max-height: 400px;
+      height: auto;
       object-fit: cover;
-      border: 4px solid var(--metal);
-      border-radius: 10px;
+    }
+
+    .featured-info {
+      padding: 1.5rem;
+      color: #111;
+    }
+
+    .featured-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured-info p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .featured-info button {
+      background: #6B3E26;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .featured-info button:hover {
+      background: #8d4a2a;
+    }
+
+    @media (min-width: 768px) {
+      .featured-card {
+        flex-direction: row;
+      }
+
+      .featured-card img {
+        width: 50%;
+        height: 100%;
+      }
+
+      .featured-info {
+        width: 50%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    #prod-Grid {
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 50% auto;
+      background-repeat: repeat;
     }
 
     .product-grid {
+      
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /* responsive card width */
       gap: 2rem;
@@ -309,18 +387,17 @@
       color: #ffffff;
     }
 
-    /* Force overlay always visible on small screens */
     @media (max-width: 768px) {
       .product-overlay {
-        opacity: 1;
-        background-color: rgba(0, 0, 0, 0.6); /* slightly softer for always-on */
-        position: relative;
-        inset: auto;
+        opacity: 1 !important;
+        position: static;
+        background-color: rgba(0, 0, 0, 0.6);
         padding-block: 1rem;
+        transition: none;
       }
 
       .product-image-container {
-        height: auto; /* let image + overlay define height */
+        height: auto;
         display: flex;
         flex-direction: column;
       }
@@ -328,6 +405,10 @@
       .product-image-container img {
         height: auto;
         max-height: 60vw;
+      }
+
+      .product-card:hover .product-overlay {
+        opacity: 1 !important; /* cancel hover-only reveal */
       }
     }
 
@@ -391,13 +472,14 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-image: url("images/diamondPlateStrip.png");
-        background-size: 25% auto;
+        background-image: url("images/woodOnPlate.png");
+        background-size: 100% auto;
         background-repeat: repeat;
         position: absolute;
         top: 100%;
         left: 0;
         align-items: center;
+        padding: 20px;
       }
 
       nav.active .nav-links {
