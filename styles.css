@@ -137,7 +137,7 @@
 
     #carousel {
       position: relative;
-      height: 90vh;
+      min-height: 90vh;
       width: 100%;
       overflow: hidden;
     }
@@ -181,7 +181,7 @@
 
 
     #large.box-container {
-      width: 30vw;
+      min-width: 30vw;
       top: 2%;
       left: 37%;
     }
@@ -197,7 +197,7 @@
     #center.box,
     #right.box {
       position: static;
-      width: 100%;
+      min-width: 100%;
       height: auto;
     }
 
@@ -206,7 +206,7 @@
     }
 
     .box img {
-      width: 100%;
+      min-width: 100%;
       height: auto;
       object-fit: contain;
       display: block;
