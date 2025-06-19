@@ -46,8 +46,8 @@
       padding-bottom: 0.5rem;
       max-width: 90%;
       margin-inline: auto;
-      background-image: url("images/woodPhotoFrame.png");
-      background-size: 25% auto;
+      background-image: url("images/woodPhotoFrameWithNailsSTRIP.png");
+      background-size: contain;
       background-repeat: repeat;
     }
 
@@ -298,6 +298,13 @@
     }
 
     @media (min-width: 768px) {
+      .section h2 {
+        background-image: url("images/woodPhotoFrameWithNailsSTRIP.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+      }
+
       .featured-card {
         flex-direction: row;
       }
