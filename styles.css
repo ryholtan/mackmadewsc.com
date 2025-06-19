@@ -89,12 +89,12 @@
     }
 
     nav {
-      min-height: 5.5vh;
+      
       position: sticky;
       top: 0;
       z-index: 2000;
       background-image: url("images/diamondPlateJustStrip.png");
-      background-size: 28.5% auto;
+      background-size: auto 100%;
       background-repeat: repeat;
       display: flex;
       justify-content: right;
@@ -140,6 +140,15 @@
       min-height: 90vh;
       width: 100%;
       overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2vw;
+      flex-wrap: wrap;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     .bg-img {
@@ -148,6 +157,7 @@
       left: 50%;
       width: auto;
       min-width: 100vw;
+      min-height: 100%;
       object-fit: cover;
       z-index: 0;
       object-position: center center;
@@ -171,23 +181,25 @@
     .box-container {
       position: absolute;
       overflow: hidden;
+
+      flex-shrink: 1;
     }
 
     #small.box-container {                    
-      width: 15vw;        
+      min-width: clamp(12%, 18vw, 25%);       
       top: 15%;
       left: 10%;
     }
 
 
     #large.box-container {
-      min-width: 30vw;
+      min-width: clamp(20%, 32vw, 40%);
       top: 2%;
       left: 37%;
     }
 
     #medium.box-container {
-      width: 20vw;
+      min-width: 20vw;
       top: 2%;
       right: 5%;
     }
@@ -233,9 +245,10 @@
     .right-btn { right: 2.5%; }
 
     #featured {
-      background-image: url("images/woodGrain.png");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/woodGrain.png");
       background-size: 25% auto;
       background-repeat: repeat;
+      background-blend-mode: darken;
       padding: 4rem 2rem;
       text-align: center;
     }
@@ -297,6 +310,28 @@
       background: #8d4a2a;
     }
 
+
+    @media (max-width: 1100px) {
+      #medium.box-container {
+        display: none;
+      }
+
+      #small.box-container {
+        left: 7%;
+        top: 23%;
+        min-width: clamp(20%, 25vw, 30%);
+      }
+
+      #large.box-container {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-10%);
+        min-width: clamp(30%, 40vw, 50%);
+      }
+    }
+
+
+
     @media (min-width: 768px) {
       .section h2 {
         background-image: url("images/woodPhotoFrameWithNailsSTRIP.png") !important;
@@ -324,7 +359,7 @@
     }
 
     #prod-Grid {
-      background-image: url("images/diamondPlateStrip.png");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/diamondPlateStrip.png");
       background-size: 50% auto;
       background-repeat: repeat;
     }
@@ -431,15 +466,23 @@
         transition: none;
       }
 
-      .product-image-container {
-        height: auto;
+      .product-card {
         display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .product-image-container {
+        height: 100% !important;
+        display: flex; 
         flex-direction: column;
       }
 
       .product-image-container img {
-        height: auto;
+        height: 100%;
         max-height: 60vw;
+        object-fit: cover !important;
+        overflow: hidden !important;
       }
 
       .product-card:hover .product-overlay {
@@ -476,11 +519,13 @@
       font-size: 1.5rem;
       margin: 0 0.5rem;
     }
+    
 
     @media (max-width: 768px) {
 
       nav {
-        background-size: cover;
+        background-size: auto 100%;
+
       }
 
       nav .logo {
@@ -530,6 +575,7 @@
         color: white;
         z-index: 3000;
         margin-right: 10vw;
+        text-shadow: 3px 3px 3px rgb(0, 0, 0);
       }
       
       #medium.box-container, #small.box-container {
@@ -561,7 +607,18 @@
       }
       
     }
+    /* Disable hover overlays for touch-enabled devices */
+    .touch-enabled .product-overlay {
+      opacity: 1;
+      /* position: static;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-block: 1rem;
+      transition: none; */
+    }
 
+    /* .touch-enabled .product-card:hover .product-overlay {
+      /* opacity: 1 !important; Cancel hover-only reveal 
+    } */
 
 
     
