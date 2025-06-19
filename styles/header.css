@@ -1,0 +1,38 @@
+/* ========== HEADER ========== */
+
+    #main-header {
+      transform-origin: top;
+      transition: transform 0.2s ease, background-image 0.3s ease;
+      position: relative;
+      width: 100%;
+      overflow: hidden; 
+      margin: 0;
+      padding: 0;
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      z-index: 1900;
+    }
+
+    #header-video {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+      #main-header {
+        min-height: 15.5vh;
+      }
+    
+  /* header.shrink {
+      background-image: url("images/diamondPlateStrip.png");
+      background-size: 25% auto;
+      background-repeat: repeat;
+    } */

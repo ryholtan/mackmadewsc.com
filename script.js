@@ -58,9 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateImages();
     
-
-    // if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    //   document.body.classList.add('touch-enabled');
-    // }
-
 });

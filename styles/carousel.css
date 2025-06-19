@@ -1,0 +1,141 @@
+/* ========== CAROUSEL ========== */
+
+    #carousel {
+      position: relative;
+      min-height: 90vh;
+      width: 100%;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2vw;
+      flex-wrap: wrap;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: auto;
+      min-width: 100vw;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      object-position: center center;
+      transform: translateX(-50%);
+      filter: brightness(75%);
+    }
+
+    .bg-img.darker {
+      filter: brightness(50%);
+    }
+
+
+    .box {
+      position: absolute;
+      background: rgba(0,0,0,0.3);
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: auto;
+    }
+
+    .box-container {
+      position: absolute;
+      overflow: hidden;
+
+      flex-shrink: 1;
+    }
+
+    #small.box-container {                    
+      min-width: clamp(12%, 18vw, 25%);       
+      top: 15%;
+      left: 10%;
+    }
+
+
+    #large.box-container {
+      min-width: clamp(20%, 32vw, 40%);
+      top: 2%;
+      left: 37%;
+    }
+
+    #medium.box-container {
+      min-width: 20vw;
+      top: 2%;
+      right: 5%;
+    }
+
+
+    #left.box,
+    #center.box,
+    #right.box {
+      position: static;
+      min-width: 100%;
+      height: auto;
+    }
+
+    #left.box {
+      top: 50%;
+    }
+
+    .box img {
+      min-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      top: 50%;
+      border: 15px ridge #6c6c6c;
+    }
+
+
+      #medium.box-container {
+        display: none;
+      }
+
+      #small.box-container {
+        left: 7%;
+        top: 23%;
+        min-width: clamp(20%, 25vw, 30%);
+      }
+
+      #large.box-container {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-10%);
+        min-width: clamp(30%, 40vw, 50%);
+      }
+    
+
+
+
+    @media (min-width: 768px) {
+      #medium.box-container, #small.box-container {
+        display: none;
+      }
+
+      #large.box-container {
+        
+        width: auto !important;
+        
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+      }
+
+      #center.box {
+        padding: 0;
+        margin: 0;
+      }
+
+      .box img {
+        min-height: 55vh;
+        width: auto;
+        object-fit: contain;
+      }
+      
+    }
+    /* Disable hover overlays for touch-enabled devices */

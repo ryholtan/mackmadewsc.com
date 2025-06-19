@@ -1,0 +1,22 @@
+/* ========== BASE ========== */
+
+:root {
+      --wood: #8b5e3c;
+      --metal: #6c6c6c;
+      --accent: #c59d5f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      color: #333;
+      background-image: url("images/woodGrain.png");
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: repeat;
+    }

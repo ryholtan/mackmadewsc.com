@@ -1,0 +1,46 @@
+/* ========== LAYOUT ========== */
+
+    .section {
+      padding-block: 4rem;
+      /* margin-block-start: 2rem; */
+      /* max-width: 1200px; */
+      color: #fff;
+      position: relative;
+      width: 100vw;
+      min-height: 90vh;
+      /* overflow: hidden; */
+      border-bottom: 10px ridge rgb(78, 78, 78);
+      position: relative;
+
+    }
+    
+    .section h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      color: white;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      border-bottom: 3px solid white;
+      padding-bottom: 0.5rem;
+      max-width: 90%;
+      margin-inline: auto;
+      background-image: url("images/woodPhotoFrameWithNailsSTRIP.png");
+      background-size: contain;
+      background-repeat: repeat;
+    }
+
+
+    section:first-of-type {
+      margin-block-start: 0;
+    }
+
+
+      .section h2 {
+        background-image: url("images/woodPhotoFrameWithNailsSTRIP.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+      }

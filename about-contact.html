@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About & Contact - Mack Made</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="dogIcon.png">
+</head>
+<body>
+  <nav>
+    <img class="logo" src="dogIcon.png" alt="Bulldog Logo">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about-contact.html">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="section" id="about">
+    <h2>Meet the Makers</h2>
+    <div class="about-flex">
+        <div class="about-row">
+            <img src="images/family/momDad.png" alt="Mom and Dad">
+            <p><strong>Mom & Dad</strong><br>Mom stains and finishes the wood while Dad handles the forge. Together, they started Mack Made with nothing but a welder and a dream.</p>
+        </div>
+
+        <div class="about-row">
+            <img src="images/family/son.png" alt="Son in the shop">
+            <p><strong>Son</strong><br>Leads design and custom orders. He’s the one making sparks fly (literally) in the back of the shop.</p>
+        </div>
+
+        <div id="fam" class="about-row">
+            <img src="images/family/theFam.png" alt="The family">
+            <p><strong>The Fam</strong><br>Mack Made Wood & Steel Creations is a family-run shop in Southeast Idaho. Born from a garage, a grinder, and a dream, this small-town family business crafts each piece with fire, sweat, and pride.
+            </p>
+            <p>
+            Dad forges the steel. Mom shapes and finishes the wood. Their son leads creative design, while their daughter and her husband handle logistics, photography, and customer care. Every item tells a story—and you're part of it when you buy Mack Made.
+        </div>
+    </div>
+    </section>
+
+
+  <section class="section" id="contact">
+    <h2>Contact Us!</h2>
+    <form class="contact-form">
+      <label for="name">Name<span>*</span></label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Phone<span>*</span></label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9\-+\s()]{7,}" required>
+
+      <label for="email">Email<span>*</span></label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="reason">Reason for Contact (Custom orders welcome!)<span>*</span></label>
+      <textarea id="reason" name="reason" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="contact-info">
+      Phone: 777-777-7777<br>
+      Email: info@mackmadewsc.com
+    </div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; <span id="year"></span> Mack Made Wood & Steel Creations</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
