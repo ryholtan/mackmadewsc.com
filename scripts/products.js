@@ -73,6 +73,230 @@ document.addEventListener('DOMContentLoaded', () => {
       image: "images/products/weThePeople.png",
       url: "https://mackmade.square.site/product/we-the-people/8",
       tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Chains Forged",
+      description: "Symbol of strength and unity.",
+      image: "images/products/chainsForged.png",
+      url: "https://mackmade.square.site/product/chains-forged/1",
+      tags: ["steel", "symbolic", "popular"]
+    },
+    {
+      name: "Idaho Circle",
+      description: "Celebrate Idaho pride with forged elegance.",
+      image: "images/products/idahoCircle.png",
+      url: "https://mackmade.square.site/product/idaho-circle/2",
+      tags: ["state", "steel", "decor"]
+    },
+    {
+      name: "Punisher Flag",
+      description: "Bold, rugged, and forged with pride.",
+      image: "images/products/punisherFlag.png",
+      url: "https://mackmade.square.site/product/punisher-flag/3",
+      tags: ["patriotic", "steel", "symbolic", "text-based", "popular"]
+    },
+    {
+      name: "Soldier's Cross",
+      description: "Honoring sacrifice in steel.",
+      image: "images/products/soldiersCross.png",
+      url: "https://mackmade.square.site/product/soldiers-cross/4",
+      tags: ["faith", "memorial", "steel", "decor"]
+    },
+    {
+      name: "The Flag",
+      description: "A classic symbol of American freedom.",
+      image: "images/products/theFlag.png",
+      url: "https://mackmade.square.site/product/the-flag/5",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Trespass Meet God",
+      description: "A bold warning forged in steel.",
+      image: "images/products/tresspassMeetGod.png",
+      url: "https://mackmade.square.site/product/trespass-meet-god/6",
+      tags: ["warning", "steel", "outdoor", "text-based"]
+    },
+    {
+      name: "USA Eagle",
+      description: "Patriotic steel art forged in freedom.",
+      image: "images/products/usaEagle.png",
+      url: "https://mackmade.square.site/product/usa-eagle/7",
+      tags: ["patriotic", "steel", "symbolic"]
+    },
+    {
+      name: "We the People",
+      description: "Rustic declaration of liberty and pride.",
+      image: "images/products/weThePeople.png",
+      url: "https://mackmade.square.site/product/we-the-people/8",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Chains Forged",
+      description: "Symbol of strength and unity.",
+      image: "images/products/chainsForged.png",
+      url: "https://mackmade.square.site/product/chains-forged/1",
+      tags: ["steel", "symbolic", "popular"]
+    },
+    {
+      name: "Idaho Circle",
+      description: "Celebrate Idaho pride with forged elegance.",
+      image: "images/products/idahoCircle.png",
+      url: "https://mackmade.square.site/product/idaho-circle/2",
+      tags: ["state", "steel", "decor"]
+    },
+    {
+      name: "Punisher Flag",
+      description: "Bold, rugged, and forged with pride.",
+      image: "images/products/punisherFlag.png",
+      url: "https://mackmade.square.site/product/punisher-flag/3",
+      tags: ["patriotic", "steel", "symbolic", "text-based", "popular"]
+    },
+    {
+      name: "Soldier's Cross",
+      description: "Honoring sacrifice in steel.",
+      image: "images/products/soldiersCross.png",
+      url: "https://mackmade.square.site/product/soldiers-cross/4",
+      tags: ["faith", "memorial", "steel", "decor"]
+    },
+    {
+      name: "The Flag",
+      description: "A classic symbol of American freedom.",
+      image: "images/products/theFlag.png",
+      url: "https://mackmade.square.site/product/the-flag/5",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Trespass Meet God",
+      description: "A bold warning forged in steel.",
+      image: "images/products/tresspassMeetGod.png",
+      url: "https://mackmade.square.site/product/trespass-meet-god/6",
+      tags: ["warning", "steel", "outdoor", "text-based"]
+    },
+    {
+      name: "USA Eagle",
+      description: "Patriotic steel art forged in freedom.",
+      image: "images/products/usaEagle.png",
+      url: "https://mackmade.square.site/product/usa-eagle/7",
+      tags: ["patriotic", "steel", "symbolic"]
+    },
+    {
+      name: "We the People",
+      description: "Rustic declaration of liberty and pride.",
+      image: "images/products/weThePeople.png",
+      url: "https://mackmade.square.site/product/we-the-people/8",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Chains Forged",
+      description: "Symbol of strength and unity.",
+      image: "images/products/chainsForged.png",
+      url: "https://mackmade.square.site/product/chains-forged/1",
+      tags: ["steel", "symbolic", "popular"]
+    },
+    {
+      name: "Idaho Circle",
+      description: "Celebrate Idaho pride with forged elegance.",
+      image: "images/products/idahoCircle.png",
+      url: "https://mackmade.square.site/product/idaho-circle/2",
+      tags: ["state", "steel", "decor"]
+    },
+    {
+      name: "Punisher Flag",
+      description: "Bold, rugged, and forged with pride.",
+      image: "images/products/punisherFlag.png",
+      url: "https://mackmade.square.site/product/punisher-flag/3",
+      tags: ["patriotic", "steel", "symbolic", "text-based", "popular"]
+    },
+    {
+      name: "Soldier's Cross",
+      description: "Honoring sacrifice in steel.",
+      image: "images/products/soldiersCross.png",
+      url: "https://mackmade.square.site/product/soldiers-cross/4",
+      tags: ["faith", "memorial", "steel", "decor"]
+    },
+    {
+      name: "The Flag",
+      description: "A classic symbol of American freedom.",
+      image: "images/products/theFlag.png",
+      url: "https://mackmade.square.site/product/the-flag/5",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Trespass Meet God",
+      description: "A bold warning forged in steel.",
+      image: "images/products/tresspassMeetGod.png",
+      url: "https://mackmade.square.site/product/trespass-meet-god/6",
+      tags: ["warning", "steel", "outdoor", "text-based"]
+    },
+    {
+      name: "USA Eagle",
+      description: "Patriotic steel art forged in freedom.",
+      image: "images/products/usaEagle.png",
+      url: "https://mackmade.square.site/product/usa-eagle/7",
+      tags: ["patriotic", "steel", "symbolic"]
+    },
+    {
+      name: "We the People",
+      description: "Rustic declaration of liberty and pride.",
+      image: "images/products/weThePeople.png",
+      url: "https://mackmade.square.site/product/we-the-people/8",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Chains Forged",
+      description: "Symbol of strength and unity.",
+      image: "images/products/chainsForged.png",
+      url: "https://mackmade.square.site/product/chains-forged/1",
+      tags: ["steel", "symbolic", "popular"]
+    },
+    {
+      name: "Idaho Circle",
+      description: "Celebrate Idaho pride with forged elegance.",
+      image: "images/products/idahoCircle.png",
+      url: "https://mackmade.square.site/product/idaho-circle/2",
+      tags: ["state", "steel", "decor"]
+    },
+    {
+      name: "Punisher Flag",
+      description: "Bold, rugged, and forged with pride.",
+      image: "images/products/punisherFlag.png",
+      url: "https://mackmade.square.site/product/punisher-flag/3",
+      tags: ["patriotic", "steel", "symbolic", "text-based", "popular"]
+    },
+    {
+      name: "Soldier's Cross",
+      description: "Honoring sacrifice in steel.",
+      image: "images/products/soldiersCross.png",
+      url: "https://mackmade.square.site/product/soldiers-cross/4",
+      tags: ["faith", "memorial", "steel", "decor"]
+    },
+    {
+      name: "The Flag",
+      description: "A classic symbol of American freedom.",
+      image: "images/products/theFlag.png",
+      url: "https://mackmade.square.site/product/the-flag/5",
+      tags: ["patriotic", "steel", "text-based"]
+    },
+    {
+      name: "Trespass Meet God",
+      description: "A bold warning forged in steel.",
+      image: "images/products/tresspassMeetGod.png",
+      url: "https://mackmade.square.site/product/trespass-meet-god/6",
+      tags: ["warning", "steel", "outdoor", "text-based"]
+    },
+    {
+      name: "USA Eagle",
+      description: "Patriotic steel art forged in freedom.",
+      image: "images/products/usaEagle.png",
+      url: "https://mackmade.square.site/product/usa-eagle/7",
+      tags: ["patriotic", "steel", "symbolic"]
+    },
+    {
+      name: "We the People",
+      description: "Rustic declaration of liberty and pride.",
+      image: "images/products/weThePeople.png",
+      url: "https://mackmade.square.site/product/we-the-people/8",
+      tags: ["patriotic", "steel", "text-based"]
     }
   ];
 

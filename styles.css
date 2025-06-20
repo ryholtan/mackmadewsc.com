@@ -28,10 +28,35 @@
       width: 100vw;
       min-height: 90vh;
       /* overflow: hidden; */
-      border-bottom: 10px ridge rgb(78, 78, 78);
+      /* border-bottom: 10px ridge rgb(78, 78, 78); */
       position: relative;
+      padding-bottom: 4rem;
+    }
+
+    .section::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3rem;
+      background-image:
+        linear-gradient(to right, rgba(0,0,0,.0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%),
+        url("images/sparks.png"); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      border-top: 4px ridge #444;
+      border-bottom: 4px ridge #444;
+      margin-top: 2rem;
+      padding: none;
+      z-index: 100;
+      margin-left: 0;
 
     }
+
     
     .section h2 {
       font-size: 2.4rem;
@@ -42,7 +67,7 @@
       text-align: center;
       margin-bottom: 2rem;
       text-shadow: 2px 2px 4px rgb(0, 0, 0);
-      border-bottom: 3px solid white;
+      border-bottom: 3px solid var(--accent);
       padding-bottom: 0.5rem;
       max-width: 90%;
       margin-inline: auto;
@@ -89,7 +114,6 @@
     }
 
     nav {
-      
       position: sticky;
       top: 0;
       z-index: 2000;
@@ -359,7 +383,7 @@
     }
 
     #prod-Grid {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/diamondPlateStrip.png");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/diamondPlatebox.png");
       background-size: 50% auto;
       background-repeat: repeat;
     }
@@ -496,6 +520,14 @@
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      position: relative;
+      background-image:
+        linear-gradient(to right, rgba(0,0,0,.0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%),
+        url("images/angleGrinder.png"); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
     }
 
     .footer-links {
@@ -795,3 +827,34 @@
 }
 
 
+body.subpage nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background-image: url("images/diamondPlateJustStrip.png");
+  background-size: auto 100%;
+  background-repeat: repeat;
+  padding: 0 2rem;
+}
+
+body.subpage nav .logo {
+  height: 8rem;
+  position: relative;
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.subpage nav .page-title {
+  font-size: 3.75rem;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  margin: 0 auto;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  border: none;
+  padding: .17rem 10rem;
+}

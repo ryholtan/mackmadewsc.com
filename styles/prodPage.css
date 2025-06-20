@@ -12,15 +12,15 @@ body {
 .product-layout {
   display: flex;
   gap: 2rem;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding-inline: 2rem;
   align-items: flex-start;
 }
 
 .filter-panel {
-  width: 30%;
-  max-width: 300px;
+  width: 30vw;
+  /* max-width: 300px; */
   background: #222;
   padding: 1rem;
   border-radius: 8px;
@@ -75,6 +75,24 @@ body {
   width: 100%;
   object-fit: cover;
 }
+
+@media (min-width: 769px) and (max-width: 1230px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 1rem;
+  }
+
+  .featured-card {
+    flex-direction: column;
+  }
+
+  .featured-card img,
+  .featured-info {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 @media (max-width: 768px) {
   .product-layout {
