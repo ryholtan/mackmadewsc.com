@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Fish Wall Art": "fish-art",
     "Keychain": "keychain",
     "Welcome to Idaho Wall Art": "idaho-art"
-    
   };
 
   const productSelect = document.createElement('select');
@@ -65,10 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = productSelect.value;
     const color = colorSelect.value;
     previewImg.src = `images/products/semiCustom/${product}/${color}${product}.png`;
-
-    // Optional styling for the color dropdown
-    // colorSelect.style.backgroundColor = colorMap[color] || color;
-    // colorSelect.style.color = (color === 'white' || color === 'gold') ? '#000' : '#fff';
   }
 
   productSelect.addEventListener('change', updatePreview);

@@ -6,8 +6,16 @@
   <title>Mack Made Wood & Steel Creations</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/carousel.css">
+  <link rel="stylesheet" href="styles/featured.css">
+  <link rel="stylesheet" href="styles/prod-grid.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/footer.css">
   <script src="script.js" defer></script>
+  <script src="scripts/home.js" defer></script>
   <link rel="icon" href="dogIcon.png">
 </head>
 <body>
@@ -39,7 +47,7 @@
       <img src="images/mainWall.png" alt="Background" class="bg-img" />
     </picture>
 
-    <button class="nav-btn left-btn">&#9664;</button>
+    <button class="turn-btn left-btn">&#9664;</button>
     <div class="box-container" id="small">
       <div id="left" class="box"><img /></div>
     </div>
@@ -49,7 +57,7 @@
     <div class="box-container" id="medium">
       <div id="right" class="box"><img /></div>
     </div>
-    <button class="nav-btn right-btn">&#9654;</button>
+    <button class="turn-btn right-btn">&#9654;</button>
   </section>
 
 
@@ -201,5 +209,14 @@
       <p>&copy; <span id="year"></span> Mack Made Wood & Steel Creations</p>
     </div>
   </footer>
+  <!-- <script>
+    const hamburger = nav.querySelector('.hamburger');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script> -->
 </body>
 </html>

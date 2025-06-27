@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | Mack Made Wood & Steel Creations</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/gallery.css">
   <script src="scripts/gallery.js" defer></script>
   <link rel="icon" href="dogIcon.png">
@@ -15,26 +18,26 @@
   <header>
   </header>
   <nav>
-      <img class="logo" src="dogIcon.png" alt="Bulldog Logo">
-      <div class="page-title">Gallery</div>
-      <div class="hamburger"><i class="fas fa-bars"></i></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about-contact.html#about">About</a>
-        <a href="about-contact.html#contact">Contact</a>
-      </div>
-    </nav>
+    <img class="logo" src="dogIcon.png" alt="Bulldog Logo">
+    <div class="page-title">Gallery</div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about-contact.html#about">About</a>
+      <a href="about-contact.html#contact">Contact</a>
+    </div>
+  </nav>
 
   <main>
     <section id="semi-custom" class="section">
       <h2>Semi-Custom Personalization</h2>
       <div class="semi-wrapper">
-        <img src="images/gallery/keychain.png" id="preview-img" alt="Keychain Preview">
+        <img src="images/products/semiCustom/eagle/redEagle.png" id="preview-img" alt="Metal Eagle Sign">
         <div class="semi-info">
-          <h3>Name Keychain</h3>
-          <p>Preview your keychain in different available colors. Just select below:</p>
+          <h3>Custom Color Selector</h3>
+          <p>Preview your semi-custom item in different available colors. Just select below:</p>
           <div id="color-options" class="color-swatch-container"></div>
         </div>
       </div>
@@ -95,5 +98,14 @@
       <p>&copy; <span id="year"></span> Mack Made Wood & Steel Creations</p>
     </div>
   </footer>
+  <script>
+    const hamburger = nav.querySelector('.hamburger');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

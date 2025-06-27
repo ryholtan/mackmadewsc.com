@@ -1,125 +1,178 @@
 /* ========== NAV ========== */
 
-    .hamburger {
-      display: none;
-    }
 
-    nav {
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background-image: var(--plateStrip);
+  background-size: auto 100%;
+  background-repeat: repeat;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: #3333335b;
+  margin-top: 0;
+  padding-top: 0;
+  min-height: 7vh;
+}
+
+nav .logo {
+  height: 6rem;
+  position: absolute;
+  left: 0rem;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2001;
+}
+
+nav.stuck .logo {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+
+nav a:hover {
+  color: #ff9900;
+  text-shadow: 0 0 6px rgb(255, 3, 3);
+}
+
+
+nav.active .nav-links, 
+body.subpage nav.active .nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-btn {
+  top: 50%;
+}
+
+.hamburger {
+  display: none;
+}
+
+body.subpage nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background-image: var(--plateStrip);
+  background-size: contain;
+  background-repeat: repeat;
+  padding: 0;
+  
+}
+
+body.subpage nav .logo {
+  min-height: 1vh;
+  position: relative;
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.subpage nav .page-title {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  margin: 0 auto;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  border: none;
+  padding: .17rem 10rem;
+  min-height: auto;
+}
+
+@media (max-width: 1100px) {
+  body.subpage nav a {
+    font-size: 0.75rem; 
+    padding: 0.1rem;
+    /* margin: .5rem; */
+  }
+
+  body.subpage.nav-links {
+    margin-right: 5rem;
+    align-items: flex-end;
+    border: 1px dashed lime;
+
+    display: flex !important;
+    flex-direction: column;
+    border: 2px dashed red;
+    margin-right: 2rem;
+    background: rgba(255, 0, 0, 0.1); 
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  nav {
+    background-size: auto 100%;
+  }
+
+  nav .logo {
+    height: 6rem;
+    position: absolute;
+    left: 0rem;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2001;
+  }
+
+  nav.stuck .logo {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
       
-      position: sticky;
-      top: 0;
-      z-index: 2000;
-      background-image: url("images/diamondPlateJustStrip.png");
-      background-size: auto 100%;
-      background-repeat: repeat;
-      display: flex;
-      justify-content: right;
-      align-items: center;
-      background-color: #3333335b;
-      margin-top: 0;
-      padding-top: 0;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-image: var(--woodPlateBorder);
+    background-size: 100% auto;
+    background-repeat: repeat;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    align-items: center;
+    padding: 20px;
+  }
+
+  nav.active .nav-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: white;
+    z-index: 3000;
+    margin-right: 10vw;
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+  }  
+
+  /* body.subpage.hamburger {
+    margin: 0;
+    border: solid red 5px;
+  } */
+}
 
 
-    nav .logo {
-      height: 8rem;
-      position: absolute;
-      left: 2rem;
-      top: 0;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 2001;
-    }
-
-    nav.stuck .logo {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.25rem 0.5rem;
-      text-shadow: 3px 3px 3px rgb(0, 0, 0);
-    }
-
-    nav a:hover {
-      color: #ff9900;
-      text-shadow: 0 0 6px rgb(255, 3, 3);
-    }
-
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.8);
-      color: #111;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      z-index: 2;
-    }
-
-    .left-btn  { left: 2.5%; }
-    .right-btn { right: 2.5%; }
-
-      nav {
-        background-size: auto 100%;
-
-      }
-
-      nav .logo {
-        height: 6rem;
-        position: absolute;
-        left: 0rem;
-        top: 0;
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        z-index: 2001;
-      }
-
-      nav.stuck .logo {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-image: url("images/woodOnPlate.png");
-        background-size: 100% auto;
-        background-repeat: repeat;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        align-items: center;
-        padding: 20px;
-      }
-
-      nav.active .nav-links {
-        display: flex;
-        justify-content: center;
-      }
-
-      .hamburger {
-        display: block;
-        cursor: pointer;
-        font-size: 1.5rem;
-        padding: 0.5rem;
-        color: white;
-        z-index: 3000;
-        margin-right: 10vw;
-        text-shadow: 3px 3px 3px rgb(0, 0, 0);
-      }
-      
-      .nav-btn {
-        top: 50%;
-      }
-      
