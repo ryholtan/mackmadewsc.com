@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function updatePreview() {
     const product = productSelect.value;
     const color = colorSelect.value;
-    previewImg.src = `images/products/semiCustom/${product}/${color}${product}.png`;
+    const capProd = product.charAt(0).toUpperCase() + product.slice(1);
+    previewImg.src = `images/products/semiCustom/${product}/${color}${capProd}.png`;
   }
 
   productSelect.addEventListener('change', updatePreview);
